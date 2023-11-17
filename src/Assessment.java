@@ -12,5 +12,22 @@ public class Assessment {
         int result = square(5);
         System.out.println("Test Square: Square of 5 is " + result);
     }
+    // Write a public static method named sum that accepts two arguments and that works with both integers and doubles (use method overloading) and returns the result of adding the two passed numbers.
+
+    //Integer method
+    public static int sum (int num1, int num2) {
+        return num1 + num2;
+    }
+
+    //Double method
+    public static double sum (double num1, double num2) {
+        return num1 + num2;
+    }
+    public static void testSum() {
+        int resultInt = sum(3, 4);
+        double resultDouble = sum(2.5, 3.5);
+        System.out.println("Test Sum: Sum of integers is " + resultInt);
+        System.out.println("Test Sum: Sum of doubles is " + resultDouble);
+    }
 }
 
