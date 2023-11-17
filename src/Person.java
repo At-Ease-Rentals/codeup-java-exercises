@@ -5,7 +5,7 @@ public class Person implements Greeter {
 
     public Person(String firstName, String lastName) {
         if(firstName == null || lastName == null) {
-            throw new IllegalArgumentException("firstName and lastName cannot be null");
+            throw new IllegalArgumentException("First name and Last name cannot be null");
         }
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,5 +29,12 @@ public class Person implements Greeter {
     @Override
     public String sayHello() {
         return "Hello from " + firstName + " " + lastName;
+    }
+
+    public static class TestPerson {
+       public static void main(String[] args) {
+           Person person = new Person("Micheal", "Jackson");
+           System.out.println("Test Person:" + person.sayHello());
+       }
     }
 }
