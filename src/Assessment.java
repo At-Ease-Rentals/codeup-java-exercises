@@ -42,15 +42,28 @@ public class Assessment {
     }
 
     public static ArrayList<User> capitalizeRecords(ArrayList<User> users) {
-        ArrayList<User> capitalizedUsers = new ArrayList<>();
-
         for (User user : users) {
-            String capitalizedFirstName = user.getFirstName().substring(0, 1).toUpperCase() + user.getFirstName().substring(1);
-            String capitalizedLastName = user.getLastName().substring(0, 1).toUpperCase() + user.getLastName().substring(1);
-            User capitalizedUser = new User(capitalizedFirstName, capitalizedLastName, user.isAdmin());
-            capitalizedUsers.add(capitalizedUser);
+            String capitalizedFirstName = capitalizeFirstLetter();
+            String capitalizedLastName = capitalizeFirstLetter();
+            user.setFirstName(capitalizedFirstName);
+            user.setLastName(capitalizedLastName);
         }
-        return capitalizedUsers;
+        return users;
+    }
+
+    private static String capitalizeFirstLetter(String input) {
+        return Character.toUpperCase(input.charAt(0)) + input.substring(1);
+    }
+
+
+    public static void main(String[] args) {
+        ArrayList<User> usersToCapitalize = new ArrayList<>();
+        usersToCapitalize.add(new User("harry", "potter", false));
+        usersToCapitalize.add(new User("Hermione", "granger", true));
+        ArrayList<User> capitalizedUsers = capitalizeRecords(usersToCapitalize);
+        for (User user : capitalizedUsers) {
+            System.out.println(user.getFirstName() + " " + user.getLastName());
+        }
     }
  }
 

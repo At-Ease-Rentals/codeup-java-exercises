@@ -3,7 +3,6 @@ public class MainTest {
         Assessment.testSquare();
         Assessment.testSum();
         Assessment.testAverage();
-
         new Person.TestPerson();
 
         GreeterTest.main(args);
