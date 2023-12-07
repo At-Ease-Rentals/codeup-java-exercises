@@ -41,29 +41,29 @@ public class Assessment {
         System.out.println("Test Average: Average of [1, 2] is " + result);//1.5
     }
 
-//    public static ArrayList<User> capitalizeRecords(ArrayList<User> users) {
-//        for (User user : users) {
-//            String capitalizedFirstName = capitalizeFirstLetter();
-//            String capitalizedLastName = capitalizeFirstLetter();
-//            user.setFirstName(capitalizedFirstName);
-//            user.setLastName(capitalizedLastName);
-//        }
-//        return users;
-//    }
-//
-//    private static String capitalizeFirstLetter(String input) {
-//        return Character.toUpperCase(input.charAt(0)) + input.substring(1);
-//    }
-//
-//
-//    public static void main(String[] args) {
-//        ArrayList<User> usersToCapitalize = new ArrayList<>();
-//        usersToCapitalize.add(new User("harry", "potter", false));
-//        usersToCapitalize.add(new User("Hermione", "granger", true));
-//        ArrayList<User> capitalizedUsers = capitalizeRecords(usersToCapitalize);
-//        for (User user : capitalizedUsers) {
-//            System.out.println(user.getFirstName() + " " + user.getLastName());
-//        }
-//    }
+    public static ArrayList<User> capitalizeRecords(ArrayList<User> users) {
+        for (User user : users) {
+            String capitalizedFirstName = capitalizeFirstLetter(user.getFirstName());
+            String capitalizedLastName = capitalizeFirstLetter(user.getLastName());
+            user.setFirstName(capitalizedFirstName);
+            user.setLastName(capitalizedLastName);
+        }
+        return users;
+    }
+
+    private static String capitalizeFirstLetter(String input) {
+        return Character.toUpperCase(input.charAt(0)) + input.substring(1);
+    }
+
+
+    public static void main(String[] args) {
+        ArrayList<User> usersToCapitalize = new ArrayList<>();
+        usersToCapitalize.add(new User("harry", "potter", false));
+        usersToCapitalize.add(new User("Hermione", "granger", true));
+        ArrayList<User> capitalizedUsers = capitalizeRecords(usersToCapitalize);
+        for (User user : capitalizedUsers) {
+            System.out.println(user.getFirstName() + " " + user.getLastName());
+        }
+    }
  }
 

@@ -26,14 +26,17 @@ public class Person implements Greeter {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
     @Override
     public String sayHello() {
-        return "Hello from " + firstName + " " + lastName;
+//        return "Hello from " + firstName + " " + lastName;
+//
+        return String.format("Hello from %s %s.", firstName, lastName);
     }
 
     public static class TestPerson {
        public static void main(String[] args) {
-           Person person = new Person("Micheal", "Jackson");
+           Person person = new Person("micheal", "jackson");
            System.out.println("Test Person:" + person.sayHello());
        }
     }
